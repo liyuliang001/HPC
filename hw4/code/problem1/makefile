@@ -1,5 +1,5 @@
 all: int
 int: 
-	mpicc -O2 -o int int.c -lm -lrt
+	mpic++ -O2 -o int int.cpp -lm -lrt
 clean:
 	rm int
