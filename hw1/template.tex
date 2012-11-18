@@ -1,0 +1,78 @@
+\documentclass[a4paper]{report}   % list options between brackets
+\usepackage{CJK}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{cite}
+
+% type user-defined commands here
+
+\begin{document}
+\begin{CJK}{UTF8}{gbsn}
+\title{\vspace{120pt}\huge High Performance Computing\\ Homework 1\\[1em] \huge Understanding the Programming Platform\\[1em] \Large Report}
+\author{\\[3em]\Large Peiyun Hu, 2010011297 \\ [1em]\Large Department of Computer Science \& Technology}
+\date{Sep. 22, 2012}    % type date between braces
+\maketitle
+
+\chapter{Environment}             % chapter 1
+\section{Hardware}
+\subsection{CPU} \label{info:cpu}
+
+Model Name: Intel(R) Core(TM)2 Quad CPU @ 2.93GHz\\
+Cores: 4
+\subsection{Memory} 
+Total Memory: 4055940 KB
+
+\subsection{Cache}
+Cache Size: 4096 KB
+
+\subsection{Disk} 
+
+
+\section{Software}     % section 1.1
+
+\subsection{OS} 
+Linux version 2.6.38-8-generic
+\subsection{Compiler} 
+gcc version 4.5.2 (Ubuntu/Linaro 4.5.2-8ubuntu4)
+\subsection{Compiler Options}
+
+\subsection{Timing Method} 
+
+
+\chapter{Performance}
+\section{Theoretical Peak Performance}
+As is shown in \ref{info:cpu}, it is known that A Core 2 Quad has 4 cores, and 1 execution unit per core. A SSE register is 128 bits wide, and can store 4 floats per register, for a float is 32 bit wide. Assuming that the execution unit does 1 SSE operation per cycle, the theoratical peak performance should be like:\
+
+\begin{center} 
+4 Cores * 1 Execution Unit * 2.93 GHz * 1 SSE Operation Per Second * 4 Float Operations, 
+\end{center}
+
+\noindent and the result is as below:
+\begin{align}
+\text{Peak Performance of Flops = 46.88 GFlops}
+\end{align}
+
+Similarly, we could work out the theoretical peak performance of Double Operations per second, which is half of Peak Performance of Flops. \cite{plain:myarticle}
+
+\section{Experiment Results}
+\subsection{Vector-Vector}
+
+\subsection{Matrix-Vector}
+
+\subsection{Matrix-Matrix}
+
+
+%\begin{thebibliography}{9}
+%  % type bibliography here
+%  Peiyun, how to make love, 2012, 1
+%\end{thebibliography}
+
+\bibliographystyle{plain}
+\bibliography{bibitex}
+
+\end{CJK}
+\end{document}
