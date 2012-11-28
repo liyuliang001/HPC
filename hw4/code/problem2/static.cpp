@@ -22,7 +22,8 @@ int workload(int task_id, int mode){
 	}else if(mode == 2){ // incremendtal
 		return std_sleep*(1+task_id/(double)task_num);
 	}else if(mode == 3){ // sin 
-		return (sin(2*PI*task_id/task_num) + 2) * std_sleep;
+//		return (sin(2*PI*task_id/task_num) + 1.5) * std_sleep;
+		return std_sleep*(2-task_id/(double)task_num);
 	}
 }
 
