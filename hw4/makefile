@@ -1,0 +1,15 @@
+all: mpi_int openmp_int static guided dynamic study
+mpi_int: 
+	mpic++ -O2 -o ./bin/problem1/mpi_int ./code/problem1/mpi_int.cpp -lm -lrt
+openmp_int:
+	g++ -O2 -o ./bin/problem1/openmp_int ./code/problem1/openmp_int.cpp -lm -lrt -fopenmp
+static: 
+	mpic++ -O2 -o ./bin/problem2/static ./code/problem2/static.cpp -lm -lrt
+guided:
+	mpic++ -O2 -o ./bin/problem2/guided ./code/problem2/guided.cpp -lm -lrt
+dynamic:
+	mpic++ -O2 -o ./bin/problem2/dynamic ./code/problem2/dynamic.cpp -lm -lrt
+study:
+	mpic++ -O2 -o ./bin/problem3/study ./code/problem3/study.cpp -lm -lrt
+clean:
+	rm ./bin/problem1/mpi_int ./bin/problem1/openmp_int ./bin/problem2/static ./bin/problem2/guided ./bin/problem2/dynamic ./bin/problem2/study
